@@ -17,7 +17,7 @@ def submit_amazon_comment():
         data = request.get_json()
         logger.info(f'提交 amazon comment 的数据为: {json.dumps(data)}')
         
-        # 这里可以添加处理逻辑
+        # 这里可以添加处理逻辑, 比如将评论数据存入数据库
         # TODO: 处理评论提交逻辑
         
         return jsonify({
