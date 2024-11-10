@@ -50,5 +50,6 @@ def hello():
     return "Hello, World!"
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    logger.info('Flask app 启动成功')
+    debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    app.run(host='0.0.0.0', port=5000, debug=debug_mode)
+    logger.info(f'Flask app 启动成功 (Debug 模式: {debug_mode})')
